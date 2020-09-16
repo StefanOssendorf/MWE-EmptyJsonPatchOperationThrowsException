@@ -14,10 +14,6 @@ namespace MWE_JsonPatchApplyToException.Controllers
             var origFoo = new Foo { Name = "Dummy" };
 
             patchDocument.ApplyTo(origFoo, ModelState); // This should not throw any exception!
-            if ( !ModelState.IsValid )
-            {
-                return ValidationProblem();
-            }
 
             return Ok(origFoo);
         }
